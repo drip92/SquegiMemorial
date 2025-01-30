@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webgui</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212; 
+      color: #ffffff; 
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center; 
+      min-height: 100vh; 
+    }
+    #profile-image {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 20px; /* Space between the image and the title */
+    }
+    select {
+      background-color: #333333; /* Dark dropdown background */
+      color: #ffffff; /* Light dropdown text */
+      border: 1px solid #555555; /* Dark border */
+      padding: 5px;
+      border-radius: 5px;
+    }
+    h1 {
+      color: #ffffff; 
+    }
+    label {
+      color: #ffffff; 
+    }
+    #explanation {
+      color: #dddddd; 
+      margin-top: 20px; 
+      font-size: 1.2rem; 
+      width: 50%; 
+      text-align: center; 
+    }
+  </style>
+</head>
+<body>
+
+  <img id="profile-image" src="filename='profile-image.png'" alt="Profile Image">
+
+
+  <h1>Harvard Engineered Squegi Clicker WebGUI</h1>
+  <p id="explanation">hi, my name is Squegi, if you're reading this. I am dead. I have uploaded my click data and sent it to some scientists at harvard to keep my legacy going. Please select a pattern from the list below. In doing so, it will generate entirely new click data based on mine recorded in a lab. Happy clicking!</p> <!-- Added explanation -->
+  
+  </select>
+
+  <div id="graph-container">
+    <canvas id="cpsChart"></canvas>
+  </div>
+  </script>
+</body>
+</html>
