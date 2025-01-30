@@ -20,12 +20,12 @@
     #profile-image {
       width: 300px;
       height: 300px;
-      margin-bottom: 20px; /* Space between the image and the title */
+      margin-bottom: 20px;
     }
     select {
-      background-color: #333333; /* Dark dropdown background */
-      color: #ffffff; /* Light dropdown text */
-      border: 1px solid #555555; /* Dark border */
+      background-color: #333333; 
+      color: #ffffff; 
+      border: 1px solid #555555; 
       padding: 5px;
       border-radius: 5px;
     }
@@ -37,10 +37,22 @@
     }
     #explanation {
       color: #dddddd; 
-      margin-top: 20px; 
       font-size: 1.2rem; 
       width: 50%; 
       text-align: center; 
+      margin-bottom: 0; 
+    }
+  
+    .video-container {
+      width: 560px;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-top: 5px; 
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -48,17 +60,24 @@
 
   <img id="profile-image" src="images/profile-image.png" alt="Profile Image">
 
+  <h1>Harvard Engineer Squegi Click Data Research</h1>
+  <p id="explanation">Hi, my name is Squegi. If you're reading this, I am dead. I have uploaded my click data and sent it to some scientists at Harvard to keep my legacy going. In the near future you will be able to harness the power I once had. All data recorded from a lab provided by Harvard University. Direct click data was collected using the Corsair m65 gaming mouse.</p>
+  <p id="explanation">More information coming soon.</p>
 
 
-    <h1>Harvard Engineer Squegi Click Data Research</h1>
-  <p id="explanation">Hi, my name is Squegi. If you're reading this, I am dead. I have uploaded my click data and sent it to some scientists at harvard to keep my legacy going. In the near future you will be able to harness the power I once had. All data recorded from a lab provided by Harvard University. Direct click data was collected using the Corsair m65 gaming mouse.  </p> <!-- Added explanation -->
-  <p id="explanation">More information coming soon.</p> 
-  
-  </select>
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/rw1RKZKWh6g" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
 
   <div id="graph-container">
     <canvas id="cpsChart"></canvas>
   </div>
-  </script>
+
 </body>
 </html>
