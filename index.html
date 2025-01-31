@@ -11,73 +11,133 @@
       padding: 0;
       background-color: #121212; 
       color: #ffffff; 
-      display: flex;
-      flex-direction: column;
-      align-items: center; 
-      justify-content: center; 
-      min-height: 100vh; 
     }
+
+    /* Center content properly */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
     #profile-image {
       width: 300px;
       height: 300px;
       margin-bottom: 20px;
     }
-    select {
-      background-color: #333333; 
-      color: #ffffff; 
-      border: 1px solid #555555; 
-      padding: 5px;
-      border-radius: 5px;
-    }
+    
     h1 {
       color: #ffffff; 
     }
-    label {
-      color: #ffffff; 
-    }
+    
     #explanation {
       color: #dddddd; 
       font-size: 1.2rem; 
-      width: 50%; 
+      width: 100%;
+      max-width: 600px;
       text-align: center; 
-      margin-bottom: 0; 
+      margin: 0 auto;
     }
-  
+
+    /* Tab buttons */
+    .tab-container {
+      margin-top: 20px;
+    }
+    .tab-button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 5px;
+    }
+    .tab-button:hover {
+      background: #555;
+    }
+
+    /* Content sections */
+    .tab-content {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Video container */
     .video-container {
       width: 560px;
       max-width: 100%;
       aspect-ratio: 16 / 9;
-      margin-top: 5px; 
+      margin: 20px auto;
     }
     .video-container iframe {
       width: 100%;
       height: 100%;
       border-radius: 10px;
     }
+
+    /* Wiki iframe */
+    .wiki-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+
   </style>
 </head>
 <body>
 
-  <img id="profile-image" src="images/profile-image.png" alt="Profile Image">
+  <div class="container">
+    <!-- Tab Buttons -->
+    <div class="tab-container">
+      <button class="tab-button" onclick="openTab('main')">Main</button>
+      <button class="tab-button" onclick="openTab('wiki')">About</button>
+    </div>
 
-  <h1>Harvard Engineer Squegi Click Data Research</h1>
-  <p id="explanation">Hi, my name is Squegi. If you're reading this, I am dead. I have uploaded my click data and sent it to some scientists at Harvard to keep my legacy going. In the near future you will be able to harness the power I once had. All data recorded from a lab provided by Harvard University. Direct click data was collected using the Corsair m65 gaming mouse.</p>
-  <p id="explanation">More information coming soon.</p>
+    <!-- Main Page Content -->
+    <div id="main" class="tab-content active">
+      <img id="profile-image" src="images/profile-image.png" alt="Profile Image">
+      <h1>Harvard Engineer Squegi Click Data Research</h1>
+      <p id="explanation">Hi, my name is Squegi. If you're reading this, I am dead. I have uploaded my click data and sent it to some scientists at Harvard to keep my legacy going. In the near future you will be able to harness the power I once had. All data recorded from a lab provided by Harvard University. Direct click data was collected using the Corsair m65 gaming mouse.</p>
+      <p id="explanation">More information coming soon.</p>
 
+      <!-- YouTube Video -->
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/rw1RKZKWh6g" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
 
-  <div class="video-container">
-    <iframe 
-      src="https://www.youtube.com/embed/rw1RKZKWh6g" 
-      title="YouTube video player" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen>
-    </iframe>
+      <!-- Graph -->
+      <div id="graph-container">
+        <canvas id="cpsChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Wiki Page Content -->
+    <div id="wiki" class="tab-content">
+      <h2>About</h2>
+      <div class="wiki-container">
+        <iframe src="wiki.html"></iframe>
+      </div>
+    </div>
   </div>
 
-  <div id="graph-container">
-    <canvas id="cpsChart"></canvas>
-  </div>
+  <script>
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
